@@ -40,7 +40,7 @@
 > 这里的引导项有：`1.CDROM(win10.iso) 2.CDROM(virtio.iso) 3.VirtIO磁盘(100G)`  
 > 添加PCI设备(83:00:0和83:00:1)  
 > 之后正常装系统  
-> ps:virtio是对此win虚机进行优化，性能实测有质的提升 可在[此处](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/)下载
+> ps:virtio是对此win虚机进行优化，性能实测有质的提升 可在[此处](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/)下载 对了，网卡也可以改成virtio,具体路径在`NetKVM\w7\amd64`
 
 ## usb透传
 > lsusb查询项透传的usb设备  
