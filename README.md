@@ -31,7 +31,7 @@
 > - *wget http://www.kraxel.org/repos/firmware.repo -o /etc/yum.repos.d/firmware.repo*配置yum源  
 > *yum install edk2.git-ovmf-x64*  
 > - 配置libvirtd *vim /etc/libvirt/qemu.conf* `nvram = [ "/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd:/usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd", ]`  
-> - 重启libvirtd *systemctl restart libvirtd
+> - 重启libvirtd *systemctl restart libvirtd*
 
 ## 安装win10
 > virt-manager 打开图形管理界面  
