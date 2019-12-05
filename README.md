@@ -17,7 +17,14 @@
 > 安装virt-manager *yum -y install virt-manager* (这个是虚拟机图形化管理界面)  
 
 ## 显卡透传
->
->
->
->
+> 配置iommu *vim /etc/default/grub* 将*intel_iommu=on*放在*GRUB_CMDLINE_LINUX=“ ”*里面 
+> 更新grub *grub2-mkconfig -o /boot/grub2/grub.cfg*  之后`reboot`
+> 用*dmesg | grep -e DMAR -e IOMMU*看是否有IOMMU enabled输出  
+> lspci 找到要透传的显卡，记下ID 如：83：00：0 AMD 83:00:1 Audio
+> *lspci -vv -s 83:00:0 | grep driver*可查其驱动
+> 查询到之后将驱动禁用 *vim /etc/modprobe.d/blacklist.conf* `blacklist radeon` `blacklist snd_hda_intel`  
+> 加载vfio驱动 *modprobe vfio* *modprobe vfio-pci*  
+> 从`host机`卸载A卡 *virsh nodedev-detach pci_0000_83_00_0* *virsh nodedev-detach pci_0000_83_00_1*
+> 此时再查询驱动，得到*kernel driver in use: vfio-pci*
+
+## 安装OVMF
