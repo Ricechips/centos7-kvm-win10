@@ -13,8 +13,8 @@
 ## kvm安装
 > *yum install -y qemu-kvm libvirt virt-install bridge-utils* （依次是 用户态 命令行 工具 桥接设备)  
 > 查询kvm模块 *lsmod | grep kvm*  
-> 启动libvirtd *i.systemctl enable libvirtd   ii.systemctl start libvirtd    iii.systemctl status libvirtd*  
-> 安装virt-manager *yum -y install virt-manager* (这个是虚拟机图形化管理界面)  
+> 启动libvirtd<br> *systemctl enable libvirtd <br>  systemctl start libvirtd <br>   systemctl status libvirtd*  
+> 安装virt-manager <br>*yum -y install virt-manager* (这个是虚拟机图形化管理界面)  
 
 ## 显卡透传
 > - 配置iommu *vim /etc/default/grub* 将*intel_iommu=on*放在*GRUB_CMDLINE_LINUX=“ ”*里面  
