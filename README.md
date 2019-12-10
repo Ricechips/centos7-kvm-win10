@@ -13,7 +13,7 @@
 ## kvm安装
 > *yum install -y qemu-kvm libvirt virt-install bridge-utils* （依次是 用户态 命令行 工具 桥接设备)  
 > 查询kvm模块 *lsmod | grep kvm*  
-> 启动libvirtd *systemctl enable libvirtd   systemctl start libvirtd    systemctl status libvirtd*  
+> 启动libvirtd *i.systemctl enable libvirtd   ii.systemctl start libvirtd    iii.systemctl status libvirtd*  
 > 安装virt-manager *yum -y install virt-manager* (这个是虚拟机图形化管理界面)  
 
 ## 显卡透传
