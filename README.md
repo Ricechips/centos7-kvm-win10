@@ -23,14 +23,14 @@
 > - lspci 找到要透传的显卡，记下ID 如：83:00:0 AMD 83:00:1 Audio  
 > *lspci -vv -s 83:00:0 | grep driver*可查其驱动  
 > 查询到之后将驱动禁用 *vim /etc/modprobe.d/blacklist.conf* `blacklist radeon` `blacklist snd_hda_intel`  
-> - 加载vfio驱动 *modprobe vfio* *modprobe vfio-pci*  
-> 从`host机`卸载A卡 *virsh nodedev-detach pci_0000_83_00_0* *virsh nodedev-detach pci_0000_83_00_1*  
+> - 加载vfio驱动<br> *modprobe vfio*<br> *modprobe vfio-pci*  
+> - 从`host机`卸载A卡 <br>*virsh nodedev-detach pci_0000_83_00_0* <br>*virsh nodedev-detach pci_0000_83_00_1*  
 > 此时再查询驱动，得到*kernel driver in use: vfio-pci*
 
 ## 安装OVMF
 > - *wget http://www.kraxel.org/repos/firmware.repo -o /etc/yum.repos.d/firmware.repo*配置yum源  
 > *yum install edk2.git-ovmf-x64*  
-> - 配置libvirtd *vim /etc/libvirt/qemu.conf* `nvram = [ "/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd:/usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd", ]`  
+> - 配置libvirtd<br> *vim /etc/libvirt/qemu.conf* <br>`nvram = [ "/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd:/usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd", ]`  
 > - 重启libvirtd *systemctl restart libvirtd*
 
 ## 安装win10
