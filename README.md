@@ -31,7 +31,7 @@
 > - *wget http://www.kraxel.org/repos/firmware.repo -o /etc/yum.repos.d/firmware.repo*配置yum源  
 > *yum install edk2.git-ovmf-x64*  
 > - 配置libvirtd<br> *vim /etc/libvirt/qemu.conf* <br>`nvram = [ "/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd:/usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd", ]`  
-> - 重启libvirtd *systemctl restart libvirtd*
+> - 重启libvirtd <br>*systemctl restart libvirtd*
 
 ## 安装win10
 > virt-manager 打开图形管理界面  
@@ -40,7 +40,7 @@
 > 这里的引导项有：`1.CDROM(win10.iso) 2.CDROM(virtio.iso) 3.VirtIO磁盘(100G)`  
 > 添加PCI设备(83:00:0和83:00:1)  
 > 之后正常装系统  
-> ps:virtio是对此win虚机进行优化，性能实测有质的提升 可在[此处](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/)下载 对了，网卡也可以改成virtio,具体路径在`NetKVM\w7\amd64`
+> ps:virtio是对此win虚机进行优化，性能实测有质的提升 可在[此处](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/)下载 对了,网卡也可以改成virtio,具体路径在`NetKVM\w10\amd64`
 
 ## usb透传
 > lsusb查询项透传的usb设备  
