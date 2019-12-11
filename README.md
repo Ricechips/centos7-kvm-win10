@@ -22,7 +22,8 @@
 > 用*dmesg | grep -e DMAR -e IOMMU*看是否有IOMMU enabled输出  
 > - lspci 找到要透传的显卡，记下ID 如：83:00:0 AMD 83:00:1 Audio  
 > *lspci -vv -s 83:00:0 | grep driver*可查其驱动  
-> 查询到之后将驱动禁用 *vim /etc/modprobe.d/blacklist.conf* `blacklist radeon` `blacklist snd_hda_intel`  
+> 查询到之后将驱动禁用 *vim /etc/modprobe.d/blacklist.conf* `blacklist radeon` `blacklist snd_hda_intel` 
+> - 不知道原因但是必须做的一步<br>vim /usr/lib/modprobe.d/dist-blacklist.conf 去掉禁用blacklist radeonfb 加上一行options nouveau modeset=0<br>备份原来的 initramfs nouveau image镜像 mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img<br>创建新的 initramfs image镜像 dracut /boot/initramfs-$(uname -r).img $(uname -r)   
 > - 加载vfio驱动<br> *modprobe vfio*<br> *modprobe vfio-pci*  
 > - 从`host机`卸载A卡 <br>*virsh nodedev-detach pci_0000_83_00_0* <br>*virsh nodedev-detach pci_0000_83_00_1*  
 > 此时再查询驱动，得到*kernel driver in use: vfio-pci*
