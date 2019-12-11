@@ -2,7 +2,7 @@
 
 ## 环境
 > `host机:centos7.7` kvm虚拟化 `虚机：win10`
-
+https://c-t.work/s/b215371ff6e848 fo0ufp
 ## u盘安装centos
 > bios设置u盘启动  
 > 进入安装界面按TAB修改路径  
