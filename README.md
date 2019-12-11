@@ -28,7 +28,7 @@
 > 此时再查询驱动，得到*kernel driver in use: vfio-pci*
 
 ## 安装OVMF
-> - *wget http://www.kraxel.org/repos/firmware.repo -o /etc/yum.repos.d/firmware.repo*配置yum源  
+> - *wget http://www.kraxel.org/repos/firmware.repo -O /etc/yum.repos.d/firmware.repo*配置yum源  
 > *yum install edk2.git-ovmf-x64*  
 > - 配置libvirtd<br> *vim /etc/libvirt/qemu.conf* <br>`nvram = [ "/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd:/usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd", ]`  
 > - 重启libvirtd <br>*systemctl restart libvirtd*
