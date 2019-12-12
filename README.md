@@ -20,8 +20,8 @@ https://c-t.work/s/e492073965a34e hcgkjj
 > - 配置iommu *vim /etc/default/grub* 将*intel_iommu=on*放在*GRUB_CMDLINE_LINUX=“ ”*里面  
 > 更新grub *grub2-mkconfig -o /boot/grub2/grub.cfg*  之后`reboot`  
 > 用*dmesg | grep -e DMAR -e IOMMU*看是否有IOMMU enabled输出  
-> - lspci 找到要透传的显卡，记下ID 如：83:00:0 AMD 83:00:1 Audio  
-> *lspci -vv -s 83:00:0 | grep driver*可查其驱动  
+> - lspci 找到要透传的显卡，记下ID 如：83:00.0 AMD 83:00.1 Audio  
+> *lspci -vv -s 83:00.0 | grep driver*可查其驱动  
 > 查询到之后将驱动禁用 *vim /etc/modprobe.d/blacklist.conf* `blacklist radeon` `blacklist snd_hda_intel` 
 > - 不知道原因但是必须做的一步<br>vim /usr/lib/modprobe.d/dist-blacklist.conf 去掉禁用blacklist radeonfb 加上一行options nouveau modeset=0<br>备份原来的 initramfs nouveau image镜像 mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img<br>创建新的 initramfs image镜像 dracut /boot/initramfs-$(uname -r).img $(uname -r)   
 > - 加载vfio驱动<br> *modprobe vfio*<br> *modprobe vfio-pci*  
