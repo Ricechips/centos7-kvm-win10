@@ -1,0 +1,3 @@
+#qemu-img convert -O qcow2 disk.raw disk.qcow2
+
+#qemu-img convert -O raw disk.qcow2 disk.raw
