@@ -1,8 +1,8 @@
 # 工作要求，搞了一个礼拜，结合了各大blog文章、各大网站教程，终于把透传完成了，现在总结一下流程8.
 
 ## 环境
-> `host机:centos7.7` kvm虚拟化 `虚机：win10`
-https://c-t.work/s/b215371ff6e848 fo0ufp
+> `host机:centos7.7` kvm虚拟化 `虚机：win10`  
+https://c-t.work/s/e492073965a34e hcgkjj
 ## u盘安装centos
 > bios设置u盘启动  
 > 进入安装界面按TAB修改路径  
