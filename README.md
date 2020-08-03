@@ -50,3 +50,7 @@ https://c-t.work/s/e492073965a34e hcgkjj
 
 ### 一些心得
 这东西做出来也算是磕破了头吧，查了不知道多少的资料，每一篇都有相似的操作，但又不尽相同，如果按某一篇en头做，基本是失败的，我的做法是结合每篇的精华操作，把流程搞清了，每一步做的意义是什么，明白了之后再具体实现其步骤，有针对性找操作流程，当然，同时不能忘记对硬件的考虑，如`硬盘接口脱落，内存条插了总内存反而变少了，主板太热了，无线鼠标会被金属板隔离传输导致卡顿.....`行吧，下个任务见。
+
+### 
+ps:Q:failed to set iommu for container: Operation not permitted<br>
+A:echo "1" > /sys/module/vfio_iommu_type1/parameters/allow_unsafe_interrupts
