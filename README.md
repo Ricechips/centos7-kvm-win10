@@ -53,4 +53,5 @@ https://c-t.work/s/e492073965a34e hcgkjj
 
 ### 
 ps:Q:failed to set iommu for container: Operation not permitted<br>
-A:echo "1" > /sys/module/vfio_iommu_type1/parameters/allow_unsafe_interrupts
+A:echo "1" > /sys/module/vfio_iommu_type1/parameters/allow_unsafe_interrupts<br>
+virt-host-validate 测试环境
